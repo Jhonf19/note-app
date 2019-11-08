@@ -6,6 +6,10 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 
+//env
+require('dotenv').config({path: 'variables.env'});
+console.log(process.env.DB_URL);
+
 // Initializations
 const app = express();
 require('./database');
