@@ -1,0 +1,29 @@
+
+
+<div class="row">
+  {{#each notes}}
+  <div class="col-md-3">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h3 class="card-title">{{titulo}}</h3>
+      </div>
+      <p>{{descripcion}}</p>
+      <footer class="blockquote-footer">{{fecha}}</footer>
+      <div class="card-footer">
+        <!-- <button type="button" class="btn btn-warning" name="button">Editar</button> -->
+        <!-- <button type="button" class="btn btn-danger btn-sm" name="button">Eliminar</button> -->
+        <a class="btn btn-warning btn-sm" href="/notes/edit/{{_id}}"> Editar </a>
+        <form action="/notes/delete/{{_id}}?_method=delete" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="btn btn-danger btn-sm" name="button">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="col-md-12">
+    <h1 class="text-center">No se han creado notas</h1>
+    <a class="btn btn-primary text-center" href="/notes/add">Crear una nueva</a>
+  </div>
+  {{/each}}
+</div>

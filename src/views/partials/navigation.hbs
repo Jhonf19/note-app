@@ -1,0 +1,14 @@
+<h3>menu</h3>
+<ul>
+  <li> <a href="/">Inicio</a> </li>
+  <li> <a href="/about">Acerca de</a> </li>
+  {{#if user}}
+  <li> <a href="/notes/add">nueva nota</a> </li>
+  <li> <a href="/notes">Ver notas</a> </li>
+  <li> <a href="/users/logout">Salir</a> </li>
+  {{else}}
+  <li> <a href="/users/signin">Ingresar</a> </li>
+  <li> <a href="/users/signup">Registrarse</a> </li>
+  {{/if}}
+
+</ul>
